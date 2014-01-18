@@ -1,4 +1,4 @@
 blogfolio
 =========
 
-![posts page](public/fixtures.png)
+![posts page](public/posts_page.jpg)
