@@ -25,7 +25,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'minitest-rails-capybara', '0.10.0'
-  gem 'turn', require: false, '0.9.6'
+  gem 'turn', '0.9.6', require: false
 end
 
 group :test do
