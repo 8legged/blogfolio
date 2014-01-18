@@ -10,6 +10,6 @@ feature "Visiting the post index" do
     visit posts_path
 
     # Then the existing posts should be loaded
-    page.text.must_include posts(:sample_post_2).title
+    page.text.must_include posts(:spost_2).title
   end
 end
