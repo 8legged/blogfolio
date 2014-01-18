@@ -2,36 +2,36 @@ source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 4.0.0'
 
-gem 'foundation-rails', github: 'codefellows/foundation-rails'
+gem 'foundation-rails', github: 'codefellows/foundation-rails', '5.0.3.0'
 
 gem 'jbuilder', '~> 1.2'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '3.0.4'
 
-gem 'minitest-rails'
+gem 'minitest-rails', '0.9.2'
 
-gem 'pg'
+gem 'pg', '0.17.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-gem 'rails_12factor'
+gem 'rails_12factor', '0.0.2'
 
 gem 'sass-rails', '~> 4.0.0'
 
-gem 'turbolinks'
+gem 'turbolinks', '2.2.0'
 
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
-  gem 'minitest-rails-capybara'
-  gem 'turn', require: false
+  gem 'minitest-rails-capybara', '0.10.0'
+  gem 'turn', require: false, '0.9.6'
 end
 
 group :test do
-  gem 'capybara'
-  gem 'guard'
-  gem 'rb-fsevent'
+  gem 'capybara', '~> 2.1.0'
+  gem 'guard', '2.3.0'
+  gem 'rb-fsevent', '>= 0.9.3'
 end
 
 group :doc do
