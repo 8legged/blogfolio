@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 4.0.0'
 
-gem 'foundation-rails', git: 'git://github.com/codefellows/foundation-rails.git'
+gem 'foundation-rails', git: 'git://github.com/codefellows/foundation-rails'
+git@github.com:codefellows/foundation-rails.git
+gem 'rack-mini-profiler', git: 'git://github.com/SamSaffron/MiniProfiler'
 
 gem 'jbuilder', '~> 1.2'
 
