@@ -7,17 +7,3 @@ require "test_helper"
       page.text.must_include "Listing posts"
     end
   end
-
-
-# class CheckSiteTest < Capybara::Rails::TestCase
-#   test "sanity" do
-#     visit root_path
-#     assert_content page, "Hello World"
-#     refute_content page, "Goobye All!"
-#   end
-# end
-
-
-# require "spec_helper"
-
-

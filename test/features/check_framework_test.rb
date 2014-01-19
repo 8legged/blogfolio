@@ -8,7 +8,7 @@ feature "Check for Zurb framework" do
 
     # When
     # Then posts should have a the correct selector and declaration block
-    # page.must_have_css('div[class="columns large-8"]')
     page.must_have_css('div[class="off-canvas-wrap"]')
+    # page.find(:xpath, '//body').all(:xpath, './/script[@src = "foundation.min.js"]')
   end
 end
