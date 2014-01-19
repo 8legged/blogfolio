@@ -1,0 +1,42 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: myapp_<%= Rails.env %>
+  pool: 5
+  username: jn
+  password:
+  min_messages: ERROR
+
+test:
+  adapter: &postgresql
+  encoding: unicode
+  database: myapp_<%= Rails.env %>
+  pool: 5
+  username: jn
+  password:
+  min_messages: ERROR
+
+production:
+  adapter: &postgresql
+  encoding: unicode
+  database: myapp_<%= Rails.env %>
+  pool: 5
+  username: jn
+  password:
+  min_messages: ERROR
+
+
+defaults: &defaults
+  pool: 5
+  timeout: 5000
+  host: localhost
+  <<: *<%= ENV['DB'] || "postgresql" %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
