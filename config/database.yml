@@ -1,5 +1,5 @@
 development:
-  adapter: postgresql
+  adapter: &postgresql
   encoding: unicode
   database: myapp_<%= Rails.env %>
   pool: 5
