@@ -4,7 +4,7 @@ require "test_helper"
   feature "A public facing site" do
     scenario "has a welcome headline" do
       visit "http://google.com"
-      page.text.must_include "List posts"
+      page.text.must_include "Listing posts"
     end
   end
 
