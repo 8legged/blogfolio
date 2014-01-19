@@ -3,16 +3,28 @@
   <div class="small-11 small-centered column">
     <h2>Listing posts</h2>
     <%= link_to 'New Post', new_post_path %>
-
+<table>
+  <tbody>
     <% @posts.each do |post| %>
-    <h4><%= post.title %></h4>
-    <p>
-      <%= post.content %>
+    <tr>
+      <td>
+        <%= post.title %>
+      </td>
+      <td>
+        <%= post.content %>
+      </td>
+      <td>
       [<%= link_to 'Show', post %>]
+    </td>
+    <td>
       [<%= link_to 'Edit', edit_post_path(post) %>]
+    </td>
+    <td>
       [<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>]
-    </p>
+    </td>
+  </tr>
     <hr>
     <% end %>
+  </tbody>
   </div>
 </div>
