@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 4.0.0'
 
-gem 'foundation-rails', github: 'codefellows/foundation-rails'
+gem 'foundation-rails', git: 'git://github.com/codefellows/foundation-rails.git'
 
 gem 'jbuilder', '~> 1.2'
 
