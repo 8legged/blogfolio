@@ -3,8 +3,8 @@ development:
   encoding: unicode
   database: <%= Rails.env %>
   pool: 5
-  username: jn
-  password: secret
+  username: postgres
+  password:
   min_messages: ERROR
 
 test:
@@ -12,8 +12,8 @@ test:
   encoding: unicode
   database: <%= Rails.env %>
   pool: 5
-  username: jn
-  password: secret
+  username: postgres
+  password:
   min_messages: ERROR
 
 production:
@@ -21,8 +21,8 @@ production:
   encoding: unicode
   database: <%= Rails.env %>
   pool: 5
-  username: jn
-  password: secret
+  username: postgres
+  password:
   min_messages: ERROR
 
 
