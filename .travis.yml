@@ -17,7 +17,7 @@ script:
   - bundle exec rake
 before_script:
 #  - mysql -e 'create database my_app_test'
- - psql -c 'create database blogfolio_test' -U jn
+ - psql -c 'create database blogfolio_test' -U postgres
 bundler_args: --binstubs=./bundler_stubs
 
 # uncomment this line if your project needs to run something other than `rake`:
