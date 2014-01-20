@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/codefellows/foundation-rails.git
+  remote: git://github.com/codefellows/foundation-rails
   revision: 27643d3b087f22a7a5332e733daa66c8dd52f00d
   specs:
     foundation-rails (5.0.3.0)

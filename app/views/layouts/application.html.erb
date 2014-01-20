@@ -3,15 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title><%= content_for?(:title) ? yield(:title) : "blogfolio" %></title>
-
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "vendor/modernizr" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-
 <body>
   <div class="off-canvas-wrap">
     <div class="inner-wrap">
@@ -24,24 +21,18 @@
           <h1 class="title">jasonwritescode</h1>
         </section>
       </nav>
-
       <aside class="left-off-canvas-menu">
         <ul class="off-canvas-list">
           <!-- <li><label>Home</label></li> -->
           <li><a href='<%= root_path %>'>Home</a></li>
-          <!-- <li><label>Posts</label></li> -->
           <li><a href='<%= posts_path %>'>Posts</a></li>
-          ...
         </ul>
       </aside>
-
       <section class="main-section">
         <!-- content goes here -->
-        <%= yield %>
       </section>
-
       <a class="exit-off-canvas"></a>
-
+      <%= yield %>
     </div>
   </div>
 
