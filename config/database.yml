@@ -1,23 +1,29 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: blogfolio_<%= Rails.env %>
+#  database: blogfolio_<%= Rails.env %>
+  database: <%= Rails.env %>
   pool: 5
-  username: postgres
+#  username: postgres
+  username:
   min_messages: ERROR
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: blogfolio_<%= Rails.env %>
+#  database: blogfolio_<%= Rails.env %>
+  database: <%= Rails.env %>
   pool: 5
-  username: postgres
+#  username: postgres
+  username:
   min_messages: ERROR
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: blogfolio_<%= Rails.env %>
+#  database: blogfolio_<%= Rails.env %>
+  database: <%= Rails.env %>
   pool: 5
-  username: postgres
+#  username: postgres
+  username:
   min_messages: ERROR

@@ -32,6 +32,12 @@
         <!-- content goes here -->
       </section>
       <a class="exit-off-canvas"></a>
+      <p id="notice"><%= notice %></p>
+      <% flash.each do |key, value| %>
+      <div class="alert-box" <%= flash_class(key) %>
+        <%= value %>
+      </div>
+      <% end %>
       <%= yield %>
     </div>
   </div>

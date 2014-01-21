@@ -27,6 +27,8 @@ gem 'uglifier', '>= 1.3.0'
 group :development, :test do
   gem 'minitest-rails-capybara', '0.10.0'
   gem 'turn', require: false
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
