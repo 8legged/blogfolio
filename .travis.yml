@@ -1,21 +1,24 @@
 language: ruby
 rvm:
-  - "2.1.0"
-  # - "1.9.3"
-  # - "1.9.2"
-  # - "1.8.7"
-  # - jruby-18mode # JRuby in 1.8 mode
-  # - jruby-19mode # JRuby in 1.9 mode
+- 2.1.0
 env:
+  matrix:
   - DB=postgresql
+#  global:
+#    secure: R+/7LR5m78ICI7XwoI1zNdQthqin4QPFgR58cHqjbNOmkP6KwJP7CXrZCURSWoJ0XW4xXtyHo0meS0JZQh5E4JFyFZ+eBD9EB+tskn7GqeXE1w90vn67VDTcG5aJD9AC8G2NnMVpPyKVv2WA1TCLkwkDYPf9ky7ZkzV4U55jrHw=
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-  - bundle exec rake
-
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rake
 before_script:
- - psql -c 'create database blogfolio_test' -U postgres
-bundler_args: --binstubs=./bundler_stubs
-
-# uncomment this line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+- psql -c 'create database blogfolio_test' -U postgres
+bundler_args: "--binstubs=./bundler_stubs"
+deploy:
+  provider: heroku
+  api_key:
+    secure: OpuLYDf++l3Yto1jKvByHL6BD9XM8b+IsoDq5ML5H6qNtViWmF8+vA/yesFDV8olM42aCBc8sshm4Ws4ROLK7TIvRotKU13lnK775Knqq6muiWmS3T2bSohH0lZIO8tvDTOSZOZNFcU7zHTNWT3ZSoc8SDusdYBFbFYXS4CYVmE=
+  app: codeblogfolio
+  on:
+    repo: 8legged/blogfolio
+run:
+  - "rake db:migrate"
