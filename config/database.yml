@@ -3,8 +3,7 @@ development:
   encoding: unicode
   database: <%= Rails.env %>
   pool: 5
-  username: postgres
-  password:
+  username: jn
   min_messages: ERROR
 
 test:
@@ -12,8 +11,7 @@ test:
   encoding: unicode
   database: <%= Rails.env %>
   pool: 5
-  username: postgres
-  password:
+  username: jn
   min_messages: ERROR
 
 production:
@@ -21,22 +19,5 @@ production:
   encoding: unicode
   database: <%= Rails.env %>
   pool: 5
-  username: postgres
-  password:
+  username: jn
   min_messages: ERROR
-
-
-# defaults: defaults
-#   pool: 5
-#   timeout: 5000
-#   host: localhost
-#   <<: *<%= ENV['DB'] || "postgresql" %>
-
-# development:
-#   <<: *defaults
-
-# test:
-#   <<: *defaults
-
-# production:
-#   <<: *defaults

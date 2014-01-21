@@ -7,16 +7,13 @@ rvm:
   # - jruby-18mode # JRuby in 1.8 mode
   # - jruby-19mode # JRuby in 1.9 mode
 env:
-#  - DB=sqlite
-#  - DB=mysql
   - DB=postgresql
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
-#  - bundle # exec rspec spec/
   - bundle exec rake
+
 before_script:
-#  - mysql -e 'create database my_app_test'
  - psql -c 'create database blogfolio_test' -U postgres
 bundler_args: --binstubs=./bundler_stubs
 
