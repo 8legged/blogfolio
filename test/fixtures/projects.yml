@@ -1,0 +1,7 @@
+portfolio:
+  name: "How meta"
+  technologies_used: "Ruby, Rails, Zurb"
+
+freelance:
+  name:
+  technologies_used: "Ruby, Rails, Farmville API, Automilker"

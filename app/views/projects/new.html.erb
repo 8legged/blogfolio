@@ -1,17 +1,5 @@
 <h2>New project</h2>
 
-<%= form_for(@project) do |f| %>
-<div class="field">
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
-</div>
-<div class="field">
-  <%= f.label :technologies_used %><br />
-  <%= f.text_area :technologies_used %>
-</div>
-<div class="actions">
-  <%= f.submit %>
-</div>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back', projects_path %>
