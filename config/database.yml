@@ -1,47 +1,47 @@
-# development:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: <%= Rails.env %>
-#   pool: 5
-#   username:
-#   min_messages: ERROR
-
-# test:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: <%= Rails.env %>
-#   pool: 5
-#   username:
-#   min_messages: ERROR
-
-# production:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: <%= Rails.env %>
-#   pool: 5
-#   username:
-#   min_messages: ERROR
-
 development:
   adapter: postgresql
   encoding: unicode
-  database: blogfolio_<%= Rails.env %>
+  database: <%= Rails.env %>
   pool: 5
-  username: postgres
+  username:
   min_messages: ERROR
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: blogfolio_<%= Rails.env %>
+  database: <%= Rails.env %>
   pool: 5
-  username: postgres
+  username:
   min_messages: ERROR
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: blogfolio_<%= Rails.env %>
+  database: <%= Rails.env %>
   pool: 5
-  username: postgres
+  username:
   min_messages: ERROR
+
+# development:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: blogfolio_<%= Rails.env %>
+#   pool: 5
+#   username: postgres
+#   min_messages: ERROR
+
+# test:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: blogfolio_<%= Rails.env %>
+#   pool: 5
+#   username: postgres
+#   min_messages: ERROR
+
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: blogfolio_<%= Rails.env %>
+#   pool: 5
+#   username: postgres
+#   min_messages: ERROR

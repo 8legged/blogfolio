@@ -72,6 +72,9 @@ Blogfolio::Application.configure do
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
+  # Devise - set up default url options for the mailer.
+  config.action_mailer.default_url_options = { :host => 'http://jasonwritescode.com' }
+
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 

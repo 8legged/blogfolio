@@ -5,6 +5,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'foundation-rails', git: 'git://github.com/codefellows/foundation-rails'
 gem 'foundation-rails'
 
+gem 'devise'
+
 gem 'jbuilder', '~> 1.2'
 
 gem 'jquery-rails', '3.0.4'
@@ -29,12 +31,18 @@ group :development, :test do
   gem 'turn', require: false
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'launchy'
+  gem 'pry-rails'
+  gem 'pry-debugger'
+  gem 'shoulda-matchers', '~> 2.5.0'
 end
+
 
 group :test do
   gem 'capybara', '~> 2.1.0'
   gem 'guard', '2.3.0'
   gem 'rb-fsevent', '>= 0.9.3'
+  gem 'simplecov', :require => false
 end
 
 group :doc do
