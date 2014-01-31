@@ -5,6 +5,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'foundation-rails', git: 'git://github.com/codefellows/foundation-rails'
 gem 'foundation-rails'
 
+gem "pundit"
+
 gem 'devise'
 
 gem 'jbuilder', '~> 1.2'

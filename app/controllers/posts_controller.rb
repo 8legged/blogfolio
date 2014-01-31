@@ -1,13 +1,15 @@
 class PostsController < ApplicationController
+  rescue_from Pundit::NotAuthorizedError, :with => :record_not_found
   before_filter :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all
+    @posts = policy_scope(Post)
+    # @posts = Post.all
   end
 
   def show
-    # @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -27,6 +29,16 @@ class PostsController < ApplicationController
     end
   end
 
+  # def create
+  #   @post = Post.new(post_params)
+  #   authorize @post.save
+  #     flash[:success] = "Post was successfully created"
+  #     redirect_to @post
+  #   else
+  #     render action: 'new'
+  #   end
+  # end
+
   def update
     # @post = Post.find(params[:id])
     if @post.update(post_params)
@@ -38,6 +50,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    # @post = Post.find(params[:id])
+    # authorize @post
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url }
@@ -56,4 +70,7 @@ private
     params.require(:post).permit(:name, :title, :content,(:published if current_user.role == "editor"))
   end
 
+  def record_not_found
+    redirect_to posts_url, :alert => "Couldn't find post"
+  end
 end

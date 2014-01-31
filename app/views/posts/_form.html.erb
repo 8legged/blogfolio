@@ -24,6 +24,7 @@
   <%= f.text_area :content %>
 </div>
 
+
 <% if current_user.role == "editor" %>
 <%= f.label :published %><br />
 <%= f.check_box :published %>

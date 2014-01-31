@@ -35,6 +35,23 @@ div {
   }
 }
 
+table {
+  width: 100%;
+  border: none;
+}
+
+table tr.even, table tr.alt, table tr:nth-of-type(even) {
+  background: none;
+}
+
+#post_title {
+  width: 100%;
+  // font-size: 0.77778rem;
+  font-weight: bold;
+  color: #666666;
+  text-align: left;
+}
+
 #notice {
   color: green;
 }

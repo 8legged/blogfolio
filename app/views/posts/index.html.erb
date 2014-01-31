@@ -5,21 +5,57 @@
     <% if current_user %>
     <%= link_to 'New Post', new_post_path %>
     <% end %>
+
+    <% @posts.each do |post| %>
     <table>
-      <tbody>
-        <% @posts.each do |post| %>
-        <tr>
-          <td><%= post.title %></td>
-          <td><%= post.content %></td>
-          <% if current_user %>
-          <td>[<%= link_to 'Show', post %>]</td>
-          <td>[<%= link_to 'Edit', edit_post_path(post) %>]</td>
-          <td>[<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>]</td>
-          <% end %>
-        </tr>
-        <hr>
+      <tr>
+        <% if current_user && policy(post).update? %>
+        <td>
+          (<%= post.published? ? "Published" : "Unpublished" %>)
+        </td>
         <% end %>
-      </tbody>
+      </tr>
+
+
+
+
+<%# if policy(post).update? %>
+
+<%#= policy(post).update? && post.published? ? post.title : "" %>
+
+
+<%# if policy(post).update? %>
+<%#= post.title %>
+<%# else %>
+<%#= policy(post).published? ? post.title : "" %>
+<%# end %>
+
+
+<%#= policy(post).update? && post.published? ? post.title : "" %>
+
+
+
+
+      <tr id='<%= dom_id(post) %>'>
+
+
+        <td id="post_title"><%= post.title %></td>
+        <td><%= link_to "Show", post %></td>
+
+          <% if policy(post).update? %>
+        <td><%= link_to "Edit", edit_post_path(post) %></td>
+          <% end %>
+
+          <% if policy(post).destroy? %>
+        <td><%= link_to "Destroy", post, method: :delete, data: { confirm: "Are you sure?" } %></td>
+          <% end %>
+      </tr>
+      <tr>
+        <td><%= post.content %></td>
+      </tr>
     </table>
+    <% end %>
   </div>
 </div>
+
+

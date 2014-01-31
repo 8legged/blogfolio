@@ -1,7 +1,9 @@
 cr:
   title: "Code Rails"
   content: "This is how I learned to make Rails apps."
+  published: "true"
 
 spost_2:
   title: "This is another post"
   content: "examplerawr@examplerawr.com"
+  published: "true"
