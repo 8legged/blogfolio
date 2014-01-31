@@ -24,12 +24,14 @@
       <aside class="left-off-canvas-menu">
         <ul class="off-canvas-list">
           <!-- <li><label>Home</label></li> -->
-          <li><%=link_to "Sign Up", new_user_registration_path %></li>
-          <li><%=link_to "Sign In", new_user_session_path %></li>
-          <li><%=link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-
           <li><a href='<%= root_path %>'>Home</a></li>
           <li><a href='<%= posts_path %>'>Posts</a></li>
+          <% if current_user %>
+          <li><%=link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%=link_to "Sign Up", new_user_registration_path %></li>
+          <li><%=link_to "Sign In", new_user_session_path %></li>
+          <% end %>
         </ul>
       </aside>
       <section class="main-section">

@@ -15,7 +15,7 @@ feature "Creating a post" do
   scenario "submit form data to create a new post" do
 
     # Given a completed new post form
-    sign_in(:author)
+    sign_in_user(users(:author))
     visit new_post_path
     fill_in "Title", with: posts(:cr).title
     fill_in "Content", with: posts(:cr).content
@@ -32,7 +32,7 @@ feature "Creating a post" do
 
   scenario "authors can't publish" do
     # Given an author's account
-    sign_in(:author)
+    sign_in_user(users(:author))
 
     # When I visit the new page
     visit new_post_path
@@ -43,7 +43,7 @@ feature "Creating a post" do
 
   scenario "editors can publish" do
     # Given an editor's account
-    sign_in(:editor)
+    sign_in_user(users(:editor))
 
     # When I visit the new page
     visit new_post_path

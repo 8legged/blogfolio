@@ -38,7 +38,6 @@
 
       <tr id='<%= dom_id(post) %>'>
 
-
         <td id="post_title"><%= post.title %></td>
         <td><%= link_to "Show", post %></td>
 
@@ -47,7 +46,7 @@
           <% end %>
 
           <% if policy(post).destroy? %>
-        <td><%= link_to "Destroy", post, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <td id="<%= post.id %>"><%= link_to "Destroy", post, method: :delete, data: { confirm: "Are you sure?" } %></td>
           <% end %>
       </tr>
       <tr>
