@@ -17,7 +17,10 @@ class PostPolicy < ApplicationPolicy
 
   def update?
     if @user
-      @user.author? || @user.editor?
+      @user.editor? || @user.author? && !record.published?
+      # @user.author? || @user.editor?
+    # elsif
+    #   @user.author? && !record.published?
     end
   end
 
@@ -29,7 +32,8 @@ class PostPolicy < ApplicationPolicy
 
   def destroy?
     return unless @user.present?
-    @user.editor? || @user.author?
+    # @user.editor? || @user.author?
+      @user.editor? || @user.author? && !record.published?
   end
 
   class Scope < Struct.new(:user, :scope)

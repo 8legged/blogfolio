@@ -4,6 +4,6 @@ require "test_helper"
   feature "A public facing site" do
     scenario "has a welcome headline" do
       visit posts_path
-      page.text.must_include "Listing posts"
+      page.text.must_include "Random Thoughts"
     end
   end

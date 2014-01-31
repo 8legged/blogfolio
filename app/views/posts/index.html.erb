@@ -1,9 +1,12 @@
 <% provide(:title, 'Home') %>
 <div row>
   <div class="small-11 small-centered column">
-    <h2>Listing posts</h2>
+    <h3>Random Thoughts <small>(pub: <%= @pub %>, unpub: <%= @unpub %>)</small></h3>
     <% if current_user %>
-    <%= link_to 'New Post', new_post_path %>
+    <h4><small>Signed in as: <%= current_user.email %></small></h4><br>
+    [<%= link_to 'New Post', new_post_path %>]<br><br>
+    <% else %>
+    Not signed in
     <% end %>
 
     <% @posts.each do |post| %>

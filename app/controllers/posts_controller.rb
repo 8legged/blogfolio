@@ -5,7 +5,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = policy_scope(Post)
-    # @posts = Post.all
+    @pub = Post.where(:published => "true").count
+    @unpub = Post.where(:published => "false").count
   end
 
   def show
