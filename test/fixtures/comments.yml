@@ -1,0 +1,10 @@
+comm_u:
+  author: "troll"
+  author_url: "http://troll.example.com"
+  author_email: "troll@example.com"
+  content: "being a troll"
+
+# comm_a:
+#   title: "This is another post"
+#   content: "examplerawr@examplerawr.com"
+#   published: "true"

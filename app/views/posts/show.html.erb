@@ -1,17 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="small-12 small-centered columns">
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-<p id="status">
-  <b>Status:</b>
-  <%= @post.published? ? "Published" : "Unpublished" %>
-</p>
+    <p id="notice"><%= notice %></p>
+    <h4 class="subheader"><%= @post.title %> <small><span class="round secondary label"><%= @post.published? ? "Published" : "Unpublished" %></span></small></h4>
+    <p>
+      <%= @post.content %>
+    </p>
+    <h5 class="subheader">Comments</h5>
+    <%= render @post.comments %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+    <%= render "comments/form" %>
+    <p>
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= link_to 'Back', posts_path %>
+    </p>
+  </div>
+</div>
+

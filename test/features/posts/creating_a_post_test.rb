@@ -1,7 +1,6 @@
 require "test_helper"
 
 feature "Creating a post" do
-
   scenario "unauthenticated site vistiors cannot see new post button" do
 
     # When I visit the blog index page
@@ -10,7 +9,6 @@ feature "Creating a post" do
     # Then I should not see the "New Post" button
     page.wont_have_link "New Post"
   end
-
 
   scenario "submit form data to create a new post" do
 
@@ -26,9 +24,8 @@ feature "Creating a post" do
     # Then a new post should be created and displayed
     page.text.must_include "Post was successfully created"
     page.text.must_include posts(:cr).title
-    page.text.must_include "Status: Unpublished"
+    page.text.must_include "Unpublished"
   end
-
 
   scenario "authors can't publish" do
     # Given an author's account
@@ -58,7 +55,7 @@ feature "Creating a post" do
     click_on "Create Post"
 
     # Then the published post should be shown
-    page.text.must_include "Status: Published"
+    page.text.must_include "Published"
   end
 
   scenario "unauthenticated site visitors cannot visit new_post_path" do

@@ -1151,6 +1151,7 @@
 // We use these to style blockquotes
 // $blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
 // $blockquote-padding: rem-calc(9 20 0 19);
+$blockquote-border: none;
 // $blockquote-border: 1px solid #ddd;
 // $blockquote-cite-font-size: rem-calc(13);
 // $blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%);

@@ -1,6 +1,6 @@
 <% provide(:title, 'Home') %>
 <div row>
-  <div class="small-11 small-centered column">
+  <div class="small-12 small-centered column">
     <h3>Random Thoughts <small>(pub: <%= @pub %>, unpub: <%= @unpub %>)</small></h3>
     <% if current_user %>
     <h4><small>Signed in as: <%= current_user.email %></small></h4><br>
@@ -11,46 +11,38 @@
 
     <% @posts.each do |post| %>
     <table>
-      <tr>
-        <% if current_user && policy(post).update? %>
-        <td>
-          (<%= post.published? ? "Published" : "Unpublished" %>)
-        </td>
-        <% end %>
-      </tr>
 
 
 
 
-<%# if policy(post).update? %>
+      <%# if policy(post).update? %>
 
-<%#= policy(post).update? && post.published? ? post.title : "" %>
-
-
-<%# if policy(post).update? %>
-<%#= post.title %>
-<%# else %>
-<%#= policy(post).published? ? post.title : "" %>
-<%# end %>
+      <%#= policy(post).update? && post.published? ? post.title : "" %>
 
 
-<%#= policy(post).update? && post.published? ? post.title : "" %>
+      <%# if policy(post).update? %>
+      <%#= post.title %>
+      <%# else %>
+      <%#= policy(post).published? ? post.title : "" %>
+      <%# end %>
 
 
-
+      <%#= policy(post).update? && post.published? ? post.title : "" %>
 
       <tr id='<%= dom_id(post) %>'>
-
-        <td id="post_title"><%= post.title %></td>
+        <td id="post_title"><%= post.title %><% if current_user && policy(post).update? %>
+          <span class="round secondary label"> <%= post.published? ? "Published" : "Unpublished" %></span>
+          <% end %>
+        </td>
         <td><%= link_to "Show", post %></td>
 
-          <% if policy(post).update? %>
+        <% if policy(post).update? %>
         <td><%= link_to "Edit", edit_post_path(post) %></td>
-          <% end %>
+        <% end %>
 
-          <% if policy(post).destroy? %>
+        <% if policy(post).destroy? %>
         <td id="<%= post.id %>"><%= link_to "Destroy", post, method: :delete, data: { confirm: "Are you sure?" } %></td>
-          <% end %>
+        <% end %>
       </tr>
       <tr>
         <td><%= post.content %></td>

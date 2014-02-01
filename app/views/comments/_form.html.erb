@@ -1,0 +1,37 @@
+<%# if current_user.role == "editor" %>
+<%#= f.label :approved %><br />
+<%#= f.check_box :approved %>
+<%# end %>
+
+<%= form_for([@post, @post.comments.build]) do |f| %>
+<form>
+  <fieldset>
+    <legend>Add a comment</legend>
+    <div class="row">
+      <div class="small-8">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label"><%= f.label :author, class: "right inline" %></label>
+          </div>
+          <div class="small-9 columns">
+            <%= f.text_field :author, id: "right-label" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-8">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label"><%= f.label :content, class: "right inline" %></label>
+          </div>
+          <div class="small-9 columns">
+            <%= f.text_field :content, id: "right-label" %>
+            <input type="submit" href="#" class="button tiny" value="Submit">
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+<% end %>

@@ -25,6 +25,17 @@ class ActiveSupport::TestCase
     fill_in "Password", with: "password"
     click_on "Sign in"
   end
+
+  def new_comment
+    sign_in_user(users(:king))
+    visit post_path(posts(:cr))
+    save_and_open_page
+    click_on "Add comment"
+    fill_in :comment_author,        with: comments(:comm_u).author
+    fill_in :comment_author_url,    with: comments(:comm_u).author_url
+    fill_in :comment_author_email,  with: comments(:comm_u).author_email
+    fill_in :comment_content,       with: comments(:comm_u).content
+  end
 end
 
 Turn.config.format = :outline
