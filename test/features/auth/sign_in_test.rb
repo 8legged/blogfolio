@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "As a user I want to be able to sign in"
+feature "As a user I want to be able to sign in" do
   scenario "sign in with twitter works" do
     visit root_path
     click_on "Sign In"
@@ -13,7 +13,6 @@ feature "As a user I want to be able to sign in"
      info: { nickname: 'test_twitter_user'},
      })
     click_on "Sign in with Twitter"
-    save_and_open_page
-    page.must_have_content "test_twitter_user, you are signed in!"
+    page.must_have_content "Signed in!"
   end
 end
