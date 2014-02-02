@@ -1,11 +1,13 @@
 Blogfolio::Application.routes.draw do
 get 'posts/my_posts' => 'posts#my_posts'
-  devise_for :users
+  devise_for :users, path_name: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   resources :posts do
     resources :comments
   end
 
   resources :projects
+
+  # controllers: {omniauth_callbacks: "omniauth_callbacks"}
   # get 'posts#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

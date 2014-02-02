@@ -5,7 +5,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'foundation-rails', git: 'git://github.com/codefellows/foundation-rails'
 gem 'foundation-rails'
 
-gem "pundit"
+gem 'pundit'
+
+gem 'figaro'
 
 gem 'devise'
 
@@ -14,6 +16,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails', '3.0.4'
 
 gem 'minitest-rails', '0.9.2'
+
+gem 'omniauth-twitter'
 
 gem 'pg', '0.17.1'
 
