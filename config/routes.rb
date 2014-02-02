@@ -1,5 +1,5 @@
 Blogfolio::Application.routes.draw do
-
+get 'posts/my_posts' => 'posts#my_posts'
   devise_for :users
   resources :posts do
     resources :comments

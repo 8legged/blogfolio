@@ -1,22 +1,24 @@
-<% provide(:title, 'Home') %>
+<% provide(:title, 'My Posts') %>
 <div row>
   <div class="small-12 small-centered column">
-    <h3>Random Thoughts <small>(pub: <%= @pub %>, unpub: <%= @unpub %>)</small></h3>
+    <h3>My Posts <small>(pub: <%= @pub %>, unpub: <%= @unpub %>)</small></h3>
     <% if current_user %>
     <%# if policy(@posts).create? %>
     <h4><small>Signed in as: <%= current_user.email %> [ <%= current_user.role %> ROLE ]</small></h4><br>
     [<%= link_to 'New Post', new_post_path %>]<br><br>
-    <%= link_to 'My Posts', posts_my_posts_path %>
     <% else %>
     Not signed in
     <% end %>
 
     <% @posts.each do |post| %>
     <table>
+
       <tr id='<%= dom_id(post) %>'>
-        <td id="post_title"><%= post.title %><% if current_user && policy(post).update? %>
+        <td id="post_title"><%= post.title %>
+
+          <%# if current_user && policy(post).update? %>
           <span class="round secondary label"> <%= post.published? ? "Published" : "Unpublished" %></span>
-          <% end %>
+          <%# end %>
         </td>
         <td><%= link_to "Show", post %></td>
 
@@ -35,13 +37,3 @@
     <% end %>
   </div>
 </div>
-
-
-      <%# if policy(post).update? %>
-      <%#= policy(post).update? && post.published? ? post.title : "" %>
-      <%# if policy(post).update? %>
-      <%#= post.title %>
-      <%# else %>
-      <%#= policy(post).published? ? post.title : "" %>
-      <%# end %>
-      <%#= policy(post).update? && post.published? ? post.title : "" %>

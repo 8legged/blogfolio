@@ -26,7 +26,7 @@ class PostPolicy < ApplicationPolicy
 
   def create?
     if @user
-      @user.editor?
+      @user.editor? || @user.author?
     end
   end
 
@@ -40,6 +40,8 @@ class PostPolicy < ApplicationPolicy
     def resolve
       if user.present? && user.editor?
         scope.all
+      elsif user.present? && user.author?
+        scope.where(author_id: user.id)
       else
         scope.where(published: true)
       end

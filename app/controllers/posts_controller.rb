@@ -13,6 +13,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def my_posts
+    u = current_user
+    @posts = Post.where(:author_id => u.id)
+    @pub = @posts.where(:published => "true").count
+    @unpub = @posts.where(:published => "false").count
+  end
+
   def new
     @post = Post.new
   end
@@ -23,6 +30,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
+      current_user.posts << @post
       flash[:success] = "Post was successfully created"
       redirect_to @post
     else
