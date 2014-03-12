@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment =
-    @post.comments.create(params[:comment].permit(:author, :content))
+    @post.comments.create(params[:comment].permit(:author, :content, :referrer))
     if @comment.save
      flash[:success] = "Comment was successfully created"
      redirect_to post_path(@post)

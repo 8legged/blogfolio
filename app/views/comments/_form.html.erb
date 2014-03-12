@@ -1,7 +1,3 @@
-<%# if current_user.role == "editor" %>
-<%#= f.label :approved %><br />
-<%#= f.check_box :approved %>
-<%# end %>
 
 <%= form_for([@post, @post.comments.build]) do |f| %>
 <form>
@@ -33,5 +29,11 @@
       </div>
     </div>
   </fieldset>
+
+  <%# if current_user.role == "editor" %>
+<%#= f.label :approved %><br />
+<%#= f.check_box :approved %>
+<%# end %>
+
 </form>
 <% end %>
