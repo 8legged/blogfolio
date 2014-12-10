@@ -4,32 +4,20 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # gem 'foundation-rails', git: 'git://github.com/codefellows/foundation-rails'
 gem 'foundation-rails'
-
 gem 'pundit'
-
 gem 'figaro'
-
 gem 'devise'
-
 gem 'jbuilder', '~> 1.2'
-
 gem 'jquery-rails', '3.0.4'
-
 gem 'minitest-rails', '0.9.2'
-
 gem 'omniauth-twitter'
-
 gem 'pg', '0.17.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
-
 gem 'rails_12factor', '0.0.2'
-
 gem 'sass-rails', '~> 4.0.0'
-
 gem 'turbolinks', '2.2.0'
-
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
@@ -42,7 +30,6 @@ group :development, :test do
   gem 'pry-debugger'
   gem 'shoulda-matchers', '~> 2.5.0'
 end
-
 
 group :test do
   gem 'capybara', '~> 2.1.0'
