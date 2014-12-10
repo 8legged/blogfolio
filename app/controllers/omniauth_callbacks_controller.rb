@@ -4,7 +4,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     # raise request.env["omniauth.auth"].to_yaml
 
     if user.persisted?
-      flash[:notice] = "#{user.name}, you're signed in!"
+      flash[:notice] = "Signed in!"
       sign_in_and_redirect user, notice: "#{user.name}, you are signed in!"
     else
       session["devise.user_attributes"] = user.attributes
